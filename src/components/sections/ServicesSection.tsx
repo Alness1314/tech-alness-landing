@@ -1,0 +1,4 @@
+import { services } from '../../data/services'
+import { useReveal } from '../../hooks/useReveal'
+import ServiceCard from '../ui/ServiceCard'
+export default function Services() { const reveal = useReveal(); return <section id="servicios" className="section scroll-mt-24 bg-slate-50/80 dark:bg-[#07111f]/70"><div className="page-shell" ref={reveal.ref}><div className={reveal.className}><div className="section-heading"><span className="eyebrow">Servicios</span><h2>¿Qué puedo hacer por ti?</h2><p>Ofrezco soluciones completas para tu infraestructura tecnológica, desde el desarrollo de software hasta el mantenimiento de tus equipos.</p></div><div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">{services.map(service => <ServiceCard key={service.title} service={service}/>)}</div></div></div></section> }
